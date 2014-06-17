@@ -13,40 +13,6 @@
                 "element": {"#": "main"}
             }
         },
-        "actionEventListener": {
-            "prototype": "montage/core/event/action-event-listener",
-            "properties": {
-                "action": "addContent",
-                "handler": {"@": "rangeController"}
-            },
-            "_dev": {
-                "isHidden": true
-            }
-        },
-        "button": {
-            "prototype": "digit/ui/button.reel",
-            "properties": {
-                "element": {"#": "button"},
-                "enabled": true,
-                "label": "New Task"
-            },
-            "listeners": [
-                {
-                    "type": "action",
-                    "listener": {"@": "actionEventListener"}
-                }
-            ]
-        },
-        "list": {
-            "prototype": "digit/ui/list.reel",
-            "properties": {
-                "element": {"#": "list"},
-                "contentController": {"@": "rangeController"}
-            }
-        },
-        "rangeController": {
-            "prototype": "montage/core/range-controller"
-        },
         "title": {
             "prototype": "digit/ui/title.reel",
             "properties": {
@@ -59,12 +25,10 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <h1 data-montage-id="title">
-            <button data-montage-id="button"></button>
-        </h1>
-        <ul data-montage-id="list">
-            <li></li>
-        </ul>
+        @button
+        @button
+        @title
+        <h1 data-montage-id="title"></h1>
     </div>
 </body>
 </html>
